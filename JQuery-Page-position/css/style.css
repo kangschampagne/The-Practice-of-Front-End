@@ -1,0 +1,56 @@
+#menu {
+    position: fixed;
+    left: 50%;
+    top:200px;
+    margin-left: 411px;
+}
+#menu ul {
+    margin: 0;
+    padding: 0;
+    background-color: #cccccc;
+}
+#menu ul li{
+    margin-top: 5px;
+    padding: 10px;
+    list-style-type: none;
+}
+#menu ul li a:hover,
+#menu ul li a.current{
+    background: #ff8250;
+}
+
+#menu ul li a {
+    text-decoration: none;
+    color: #000;
+    font-family: "Adobe 繁黑體 Std B";
+    font-size: 1.1rem;
+}
+
+#content {
+    text-align: center;
+}
+.item {
+    margin: auto;
+    width: 800px;
+    border: 1px solid #ee5671;
+    padding: 10px;
+    margin-top:10px;
+    background: #af4f57;
+}
+.item h2 {
+    margin: 10px 50px 10px 50px;
+    border-bottom: 2px solid #ccc;
+}
+.item ul {
+    margin: 0;
+    padding: 0;
+}
+.item ul li {
+    margin:auto;
+    list-style-type: none;
+    display: inline-block;
+    width: 200px;
+    height: 130px;
+    margin: 10px;
+    background: #7c7c7c;
+}
