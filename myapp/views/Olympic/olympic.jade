@@ -1,0 +1,48 @@
+doctype true
+html(lang='zh-cn')
+    head
+        meta(http-equiv='Content-Type', content='text/html', charset='UTF-8')
+        meta(name='viewport', content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no')
+        link(rel='stylesheet', type='text/css', href='/stylesheets/Olympic/olympic.css')
+        script(type='text/javascript', src='/javascripts/jquery-3.1.0.min.js')
+        title Olympic Medal
+    body
+        .bg
+        .content
+            .medal_header
+                table#medal_top
+                    tr
+                        td(width='55') 名次
+                        td(width='371') 地区
+                        td(width='145') 金牌
+                        td(width='122') 银牌
+                        td(width='117') 铜牌
+                        td(width='188') 总数
+            .medal_content
+                table#medal_list
+                    tbody
+            .footer
+                .foot
+                    p 点击国家地区，查看精彩回放
+    script(type='text/javascript').
+        url = "http://192.168.1.7:3000/olympic/medal_list";
+        jQuery(document).ready(function () {
+            $.ajax({
+                type: "get",
+                async: false,
+                url: url,
+                dataType: "jsonp",
+                jsonp: "callback",//传递给请求处理程序或页面的，用以获得jsonp回调函数名的参数名(一般默认为:callback)
+                jsonpCallback: "flightHandler",//自定义的jsonp回调函数名称，默认为jQuery自动生成的随机函数名，也可以写"?"，jQuery会自动为你处理数据
+                success: function (json) {
+                    html = '';
+                    for (var i = 0; i <= json.medal_list.length - 1; i++) {
+                        html += '<tr><td width="55" class="td_01">' + json.medal_list[i].No + '</td><td width="371"><a href="#" >' + json.medal_list[i].country + '</a></td><td width="145"><a href="#" >' + json.medal_list[i].gold + '</a></td><td width="122"><a href="#" >' + json.medal_list[i].silver + '</a></td><td width="117"><a href="#" >' + json.medal_list[i].bronze + '</a></td><td width="188" class="last"><a href="#" >' + json.medal_list[i].sum + '</a></td></tr>'
+                    }
+                    $("#medal_list").append(html);
+                },
+                error: function () {
+                    alert('fail');
+                }
+            });
+        });

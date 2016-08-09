@@ -1,0 +1,95 @@
+html, body, .content {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    font-family: "Microsoft YaHei";
+    font-size: 0.95em;
+}
+.content, .medal_header, .medal_content, .footer{
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+.bg {
+    background: url('/images/bg1.png') no-repeat center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    opacity: .3;
+}
+.content {
+    top: 0 !important;
+}
+.medal_header {
+    height: 60px;
+    background-color: #21292B;
+    color: #fff;
+    top: 0;
+    z-index: 1;
+}
+.medal_header > td {
+    color: #fff;
+}
+.medal_header table {
+    margin: auto;
+    line-height: 53px;
+    width: 100%;
+    max-width: 900px;
+}
+.medal_header table td{
+    padding: 0 1px;
+}
+@media only screen and (max-width: 550px) {
+    .medal_header table td:nth-of-type(1) {
+        width: 100px;
+        padding-left: 5px;
+    }
+
+    .medal_header table td:nth-of-type(2) {
+        width: 300px;
+    }
+}
+#medal_top td{
+    font-size: 0.875em;
+    color: aliceblue;
+    text-align: center;
+}
+
+.medal_content {
+    top: 60px;
+    bottom: 53px;
+    overflow: auto;
+    text-align: center;
+}
+.medal_content table {
+    border-collapse: collapse;
+    margin: auto;
+    max-width: 900px;
+}
+.medal_content td {
+    height: 40px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    font-size: 0.875em;
+}
+.medal_content td:nth-of-type(even) {
+
+}
+.medal_content td a{
+    color: #000;
+    text-decoration: none;
+    font-size: 0.875em;
+}
+.td_01 {
+    padding-left: 3%;
+}
+.footer {
+    height: 52px;
+    border-top: 1px solid #dfdfdf;
+    background-color: #fcfcfc;
+    bottom: 0;
+    z-index: 1;
+}
