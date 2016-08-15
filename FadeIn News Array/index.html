@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+	<title>FadeIn FadeOut</title>
+</head>
+<body>
+
+	<div class="container">
+		<h1>JQurey Image Galore</h1>
+	</div>
+
+	<div class="news">
+		<h1>jQuery Latest News</h1>
+	</div>
+
+</body>
+<script type="text/javascript">
+
+//slider Array ----------begin//
+	var sliderArray = [
+		"index1.jpg",
+		"index2.jpg",
+		"index3.jpg",
+		"index4.jpg",
+		"index5.jpg"
+	];
+
+	var imgDir = 'img/index';
+	$(".container").append('<div class="slider-image"></div>');
+	$(".slider-image").html('<img class="img/'+sliderArray[0]+'">');
+	$(".slider-image").after('<ul id="nav"></ul>');
+
+	var sliderLength = sliderArray.length;
+
+	for (var i = 0; i<sliderLength;i++) {
+		var sliderText = i+1;
+		$("#nav").append('<li><a href="#" rel = "'+sliderText+'">'+sliderText+'</a></li>')
+	}
+
+	$("#nav li a ").on('click mouseover',function(){
+		var numSlider = $(this).attr('rel');
+		$(".slider-image").html('<img src="'+imgDir+numSlider+'.jpg"/>');
+		$(".slider-image img").fadeIn(2000);
+		$("#nav li a").removeClass('active');	
+		$(this).addClass('active');
+	})
+
+	$("#nav li a:eq(0)").click();
+//slider Array ----------end//
+
+//News Array ----------begin//
+	var newsArray = [
+		'asdfasdf111',
+		'qerqwerq222',
+		'zxcvzxcv333',
+		'mnbvljgl444',
+		'adkljfhk555',
+		'asdkjejk666',
+		'asdjhaek777',
+		'ajehfdfd888',
+		'asdfehfe999',
+		'asdfa101010'
+	];
+
+	var newsLength = newsArray.length;
+	$(".news").append('<ul id="news-feed" ></ul>');
+	for (var i = 0 ; i<newsLength;i++) {
+		$("#news-feed").append('<li>'+newsArray[i]+'</li>');
+	}
+
+	function sliderHeadline(){
+		$("#news-feed li:last").clone().prependTo('#news-feed').css('dispaly','none');
+		$("#news-feed li:first").fadeIn(1000).slideDown(1000);
+		$("#news-feed li:last").remove();
+	}
+
+	setInterval(sliderHeadline,3000);
+//New Array ----------end//
+
+</script>
+</html>

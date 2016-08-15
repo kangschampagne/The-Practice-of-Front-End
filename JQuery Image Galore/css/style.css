@@ -1,0 +1,69 @@
+.container {
+	width: 300px;
+}
+.slider-container {
+}
+
+#nav {
+	list-style-type: none;
+	margin: 10px 0 10px;
+	padding: 0;
+	position: relative;
+	float: right;
+	top: 200px;
+}
+
+#nav li {
+	float: left;
+	width: 30px;
+}
+
+#nav li a {
+	text-decoration: none;
+	background: #05609a;
+	color: #fff;
+	padding: 5px;
+}
+
+#nav li a.active {
+	background: #b4f114;
+}
+
+.container {
+	position: relative;
+	height: 250px;
+	width: 400px;
+	border: 1px solid #333;
+	overflow: hidden;
+}
+
+.slide-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.slides {
+	float: left;
+}
+
+.slide-text {
+	display: none;
+	font-size: 18px;
+}
+
+img {
+	border: 0;
+	width: 400px;
+	height: 250px;
+}
+
+.textStrip{
+	top: 0;
+	display: block;
+	left: -400px;
+	padding: 5px;
+	background: #333333;
+	opacity: .9;
+	color: #ffffff;
+}
