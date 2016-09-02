@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav {
+    margin-top: 100px;
+    height: 120px;
+    width: 100%;
+    background-color: #606060;
+    position: relative;
+}
+
+nav .nav-logo {
+    left: 5%;
+    top: 10px;
+    position: absolute;
+}
+
+nav .nav-logo img {
+    height: 100px;
+    width: 250px;
+    background: #21292B;
+    float: left;
+}
+
+nav ul {
+    width: 60%;
+    float: right;
+    position: absolute;;
+    right: 5%;
+}
+
+nav li {
+    width: 20%;
+    list-style-type: none;
+    float: left;;
+}
+
+nav li a {
+    display: block;
+    font-family: "Microsoft YaHei";
+    color: #ffffff;
+    text-decoration: none;
+}
+
+nav li > a:first-child {
+    height: 120px;
+    line-height: 120px;
+}
+.downlist {
+    height: auto;
+    display: none;
+}
+.downlist a{
+    color: #000;
+    display: block;
+    margin: 5px;
+}
+.downlist a:nth-of-type(1){
+    margin-top: 15px;
+}
+nav li > a:first-child{
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+}
+nav li > a:first-child:hover {
+    background: #a8a8a8;
+    color: #000000;
+}
+/*nav li:hover .downlist{*/
+     /*display: block;*/
+     /*color: #000;*/
+/*}*/
+.nav_box {
+    width:100%;
+    margin-top: 120px;
+    background: #fc0c16;
+    position: absolute;
+    z-index:-1;
+}

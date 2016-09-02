@@ -1,0 +1,50 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+nav {
+	background: #000;
+	margin-top: 50px;
+	width: 100%;
+	height: 40px;
+}
+nav ul {
+	width: 80%;
+	height: 40px;
+	margin: 0 auto;
+}
+nav li {
+	width: 20%;
+	list-style: none;
+	text-align: center;
+	float: left; 
+	line-height: 40px;
+    transition: 0.5s;
+}
+nav li:hover {
+	background: #ddd;
+}
+nav li:hover a{
+	color: #000;
+}
+/*nav li:hover .downlist{
+	display: block;
+}*/
+
+nav li a {
+	text-decoration: none;
+	color: #fff;
+	font-family: "微软雅黑";
+	transition: 0.2s;
+}
+.downlist {
+	display: none;
+}
+.downlist a{
+	color: #000;
+	display: block;
+	background: #ddd;
+}
+.downlist a:hover{
+	color: #fff;
+}

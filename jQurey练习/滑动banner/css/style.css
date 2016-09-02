@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.contant {
+    height: 100%;
+    width: 100%;
+    background: #ccc;
+    margin-top: 200px;
+}
+
+.banner {
+    margin: auto;
+    width: 1200px;
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+}
+
+.banner_img {
+    width: 7600px;
+    position: absolute;
+    left: 0px;
+}
+
+.banner_img li {
+    float: left;
+}
+
+.banner_img img {
+    width: 1200px;
+    height: 500px;
+}
+
+.banner_num {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 0;
+}
+
+.banner_num li {
+    width: 10px;
+    height: 10px;
+    background: #888;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 3px;
+    /**/
+    cursor: pointer;
+}
+
+.banner_num li.num_focus {
+    background: #505050;
+    box-shadow: 0px 0px 1px 1px #fff;
+}
+
+.btn {
+    color: #fff;
+    font-size: xx-large;
+    width: 50px;
+    height:100%;
+    line-height: 13;
+    position: absolute;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.28);
+    display: none;
+}
+
+.btn_l {
+    left: 0;
+    background: -prefix-linear-zgradient(left, blue, white);
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(204, 204, 204, 0.36));
+}
+
+.btn_r {
+    right: 0;
+    background: -prefix-linear-zgradient(right, blue, white);
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(204, 204, 204, 0.36));
+}
+
+.banner:hover .btn {
+    display: block;
+}
+
+;

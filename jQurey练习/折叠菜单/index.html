@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+	<title> </title>
+</head>
+<body>
+	<div id="accordion">
+		<div class="accordion-header">
+			<h3>Book</h3>
+			<span></span>
+		</div>
+
+	<ul class="accordion-content">
+		<li><a href="#">Business</a></li>
+		<li><a href="#">Education</a></li>
+		<li><a href="#">Tech</a></li>
+		<li><a href="#">Romance</a></li>
+	</ul>
+
+	<div class="accordion-header">
+		<h3>Electronic</h3>
+		<span></span>
+	</div>
+
+	<ul class="accordion-content">
+		<li><a href="#">Audio</a></li>
+		<li><a href="#">Video</a></li>
+		<li><a href="#">Automobile</a></li>
+		<li><a href="#">Appliances</a></li>
+	</ul>
+
+	<div class="accordion-header">
+		<h3>Sporting Goods</h3>
+		<span></span>
+	</div>
+
+	<ul class="accordion-content">
+		<li><a href="#">Baseball</a></li>
+		<li><a href="#">Video</a></li>
+		<li><a href="#">Automobile</a></li>
+		<li><a href="#">Appliances</a></li>
+	</ul>
+	</div>
+</body>
+<script type="text/javascript">
+	$('.accordion-content').not(':first').hide();
+	$('.accordion-content:first').show();
+	$('.accordion-header:first').addClass('header-active');
+	$('.accordion-header:first').find('span').addClass('icon-active');
+	$('.accordion-header').click(function(){
+		$('.accordion-content:visible').slideUp('slow').prev().removeClass('header-active');
+		$('.icon-active:visible').removeClass('icon-active');
+	$(this).addClass('header-active').next().slideDown('slow');
+	$(this).find('span').addClass('icon-active');
+	});
+</script>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+	<title> </title>
+</head>
+<body>
+	<nav>
+		<div class="nav-logo"><img src="#" alt="#"></div>
+		<ul>
+			<li><a href="#">首页</a>
+			</li>
+			<li><a href="#">职业课程</a>
+				<div class="downlist">
+					<a href="#">课程库1</a>
+					<a href="#">课程库2</a>
+					<a href="#">课程库3</a>
+					<a href="#">课程库4</a>
+					<a href="#">课程库5</a>
+				</div>
+			</li>
+			<li><a href="#">课程社区</a>
+				<div class="downlist">
+					<a href="#">课程库1</a>
+					<a href="#">课程库2</a>
+					<a href="#">课程库3</a>
+				</div>
+			</li>
+			<li><a href="#">课程库1</a>
+                <div class="downlist">
+					<a href="#">课程库1</a>
+					<a href="#">课程库2</a>
+				</div>
+			</li>
+			<li><a href="#">课程库2</a>
+				 <div class="downlist">
+					<a href="#">课程库1</a>
+					<a href="#">课程库2</a>
+					<a href="#">课程库3</a>
+				</div>
+			</li>
+		</ul>
+		<div class="nav_box"></div>
+	</nav>
+</body>
+<script type="text/javascript">
+	$(function () {
+		$("nav li").hover(function () {
+			var h = $(this).find(".downlist").outerHeight();
+			if (h) {
+				$(".nav_box").stop().animate({height:(h+20)});
+				$(this).find(".downlist").stop().slideDown(500);
+			}else {
+				$(".nav_box").stop().animate({height:0});
+			}
+		},function () {
+			$(".nav_box").stop().animate({height:0});
+			$(this).find(".downlist").stop().slideUp();
+		})
+	})
+</script>
+</html>

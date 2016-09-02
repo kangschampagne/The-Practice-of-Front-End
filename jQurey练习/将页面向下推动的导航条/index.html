@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+	<title> </title>
+</head>
+<body>
+<div class="head">
+	<header>
+		<a href="#" class="logo"><img src="#" alt=""></a>
+		<div class="menu">
+			<p>Menu</p>
+			<div class="nav_btn">
+				<i></i><i></i><i></i>
+			</div>
+		</div>
+	</header>
+	<nav>
+		<div class="nav_list">
+			<dl>
+				<dt><a href="#">首页</a></dt>
+			</dl>
+			<dl>
+				<dt><a href="#">首页首页</a></dt>
+				<dd><a href="#">首页首页</a></dd>
+				<dd><a href="#">首页首页</a></dd>
+				<dd><a href="#">首页首页</a></dd>
+				<dd><a href="#">首页首页</a></dd>
+			</dl>
+			<dl>
+				<dt><a href="#">首页</a></dt>
+				<dd><a href="#">首页首页</a></dd>
+				<dd><a href="#">首页首页</a></dd>
+			</dl>
+			<dl>
+				<dt><a href="#">首页</a></dt>
+				<dd><a href="#">首页首页</a></dd>
+				<dd><a href="#">首页首页</a></dd>
+				<dd><a href="#">首页首页</a></dd>
+				<dd><a href="#">首页首页</a></dd>
+			</dl>
+			<dl>
+				<dt><a href="#">首页</a></dt>
+				<dd><a href="#">首页首页</a></dd>
+				<dd><a href="#">首页首页</a></dd>
+				<dd><a href="#">首页首页</a></dd>
+			</dl>
+		</div>
+	</nav>
+</div>
+	<div class="banner"></div>
+</body>
+<script type="text/javascript">
+	$(function () {
+		$('.menu').click(function () {
+			$(this).toggleClass("on");
+			$("nav").slideToggle();
+			$("nav .nav_list").toggleClass("on");
+		})
+	})
+</script>
+</html>

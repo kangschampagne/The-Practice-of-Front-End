@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+	<title> </title>
+</head>
+<body>
+	<div id="header">
+		<ul id="nav">
+			<li><a href="#">index</a></li>
+			<li><a href="#">two</a>
+				<ul class="subnav">
+					<li><a href="#">two1</a></li>
+					<li><a href="#">two2</a></li>
+					<li><a href="#">two3</a></li>
+				</ul>
+			</li>
+			<li><a href="#">there</a></li>
+			<li><a href="#">forth</a>
+				<ul class="subnav">
+					<li><a href="#">forth1</a></li>
+					<li><a href="#">forth2</a></li>
+					<li><a href="#">forth3</a></li>
+				</ul>
+			</li>
+			<li><a href="#">fifty</a></li>
+		</ul>
+	</div>
+</body>
+<script type="text/javascript">
+	$(documemt).ready(function(){
+		$('#nav li').hover({
+			function(){
+				$(this).find('.subnav').slideDown('slow');
+			},function(){
+				$(this).find('.subnav').slideUp('fast');
+			}
+		});
+	});
+</script>
+</html>

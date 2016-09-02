@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+    <title>silder-banner</title>
+</head>
+<body>
+<div class="header"></div>
+<div class="contant">
+    <!-- banner -->
+    <div class="banner">
+        <ul class="banner_img">
+            <li><a href="#"><img src="./img/banner-img1.jpg" alt=""></a></li>
+            <li><a href="#"><img src="./img/banner-img2.jpg" alt=""></a></li>
+            <li><a href="#"><img src="./img/banner-img3.jpg" alt=""></a></li>
+            <li><a href="#"><img src="./img/banner-img4.jpg" alt=""></a></li>
+            <li><a href="#"><img src="./img/banner-img5.jpg" alt=""></a></li>
+        </ul>
+        <ul class="banner_num">
+        </ul>
+        <div class="btn btn_l">&lt</div>
+        <div class="btn btn_r">&gt</div>
+    </div>
+    <!-- banner-end -->
+</div>
+</body>
+<script type="text/javascript">
+    $(window).ready(function () {
+        Banner();
+    })
+
+    function Banner() {
+        //init
+        var img_width = $(".banner_img img").first().width();
+        console.log(img_width);
+        var banner_index = 0;
+        var banner_size = $(".banner_img>li").length;
+        for (var i = 0; i < banner_size; i++) {
+            $(".banner_num").append("<li></li>");
+        }
+        var banner_clone = $(".banner_img>li").first().clone();
+        $(".banner_img").append(banner_clone);
+        $(".banner_num>li").eq(0).addClass("num_focus");
+
+        $(".btn_r").click(function () {
+            banner_move_l();
+            banner_move();
+        })
+        $(".btn_l").click(function () {
+            banner_index--;
+            if (banner_index <= -1) {
+                banner_index = banner_size;
+                $(".banner_img").animate({left: -(banner_index * img_width)}, 0);
+                banner_index = banner_size - 1;
+            }
+            banner_move();
+        })
+        function banner_move_l() {
+            banner_index++;
+            if (banner_index == banner_size) {
+                $(".banner_num>li").eq(0).addClass("num_focus").siblings().removeClass("num_focus");
+            }
+            if (banner_index > banner_size) {
+                $(".banner_img").animate({left: 0}, 0);
+                banner_index = 1;
+            }
+        }
+
+        function banner_move() {
+            $(".banner_img").animate({left: -(banner_index * img_width)}, 500);
+            $(".banner_num>li").eq(banner_index).addClass("num_focus").siblings().removeClass("num_focus");
+        }
+
+        var t = setInterval(function () {
+            banner_move_l();
+            banner_move();
+        }, 5000);
+
+        $(".banner").hover(function () {
+            clearInterval(t);
+        }, function () {
+            t = setInterval(function () {
+                banner_move_l();
+                banner_move();
+            },5000);
+        })
+    }
+</script>
+</html>

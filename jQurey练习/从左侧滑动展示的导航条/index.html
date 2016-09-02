@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+	<title> </title>
+</head>
+<body>
+	<nav>
+		<div class="nav_list">
+			<ul>
+				<li><a href="#">首页</a></li>
+				<li><a href="#">导航导航</a></li>
+				<li><a href="#">导航导航</a></li>
+				<li><a href="#">导航导航</a></li>
+				<li><a href="#">导航导航</a></li>
+			</ul>
+		</div>
+		<div class="nav_btn">
+			<i></i><i></i><i></i>
+		</div>
+		<div class="nav_ft">
+			<a href="#"><img src="#" alt=""></a>
+		</div>
+	</nav>
+	<div class="banner"></div>
+	<div class="bg"></div>
+</body>
+<script type="text/javascript">
+	$(function () {
+		$(".nav_btn,.bg").click(function () {
+			$(".nav_btn").toggleClass("on");
+			$("nav").toggleClass("on");
+			$(".bg").delay(500).fadeToggle();
+			$(".banner").toggleClass("on");
+		})
+	})
+</script>
+</html>

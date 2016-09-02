@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+	<title> </title>
+</head>
+<body>
+	<nav>
+		<ul>
+			<li><a href="#"><b>One</b><i>导航1</i></a></li>
+			<li><a href="#"><b>Two</b><i>导航2</i></a></li>
+			<li><a href="#"><b>Three</b><i>导航3</i></a></li>
+			<li><a href="#"><b>Four</b><i>导航4</i></a></li>
+			<li><a href="#"><b>Five</b><i>导航5</i></a></li>
+		</ul>
+	</nav>
+</body>
+<script type="text/javascript">
+$(function () {
+	$('nav a').hover(function() {
+		$(this).stop().animate({"margin-top":-40},500);
+	}, function() {
+		$(this).stop().animate({"margin-top":0},500);
+	})
+})
+</script>
+</html>

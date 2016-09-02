@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+    <title></title>
+</head>
+<body>
+<nav>
+    <div class="nav_con">
+        <div class="logo"><a href="#"></a></div>
+        <ul>
+            <li><a href="#">导航目</a></li>
+            <li><a href="#">导航目</a></li>
+            <li><a href="#">导航目</a></li>
+            <li><a href="#">导航目</a></li>
+        </ul>
+    </div>
+</nav>
+<header>
+    <div class="banner"></div>
+</header>
+<div id="content">
+    <div class="con_1"></div>
+    <div class="con_2">
+        <ul>
+            <li></li><li></li><li></li>
+        </ul>
+    </div>
+    <div class="con_3"></div>
+</div>
+<div class="main_top"><a href="javascript:;">∧</a></div>
+<footer></footer>
+</body>
+<script type="text/javascript">
+    $(function () {
+        var top1 = $(window).scrollTop();
+        $(window).scroll(function () {
+            var top = $(this).scrollTop();
+            if (top > 200) {
+                $(".main_top a").stop().fadeIn();
+            }else {
+                $(".main_top a").stop().fadeOut();
+            }
+
+            if (top > top1) {
+                $("nav").stop().animate({top:-100},300);
+            }else {
+                $("nav").stop().animate({top:0},300);
+            }
+            top1 = top;
+            addClass_on(".con_2 ul li:nth-child(1)", top);
+
+        });
+        $(".main_top a").click(function () {
+            $("nav").stop().animate({top:0},300);
+            $("body,html").stop().animate({scrollTop:0},300);
+        })
+        function addClass_on(elem,height) {
+            var elem_height = $(elem).offset().top;
+            var window_height = $(window).height()*0.5;
+            console.log("%d,%d,%d",elem_height,height,window_height);
+            if (elem_height < height+window_height){
+                $(elem).addClass("on");
+            }else {
+                $(elem).removeClass("on");
+            }
+        }
+    })
+</script>
+</html>

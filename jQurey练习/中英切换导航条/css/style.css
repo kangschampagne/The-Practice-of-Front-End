@@ -1,0 +1,42 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+nav {
+	width: 100%;
+	height: 40px;
+	margin-top: 50px;
+	background: #000;
+	text-align: center;
+	overflow: hidden;
+}
+nav ul {
+	width: 80%;
+	height: 40px;
+	margin: 0 auto;
+}
+nav li {
+	float: left;
+	list-style: none;	
+	width: 20%;
+}
+nav li a {
+	text-decoration: none;
+	display: block;
+	padding: 0 2%;
+	line-height: 40px;
+	/*transition: 0.5s;*/
+}
+nav b,i {
+	color: #fff;
+	font-style: normal;
+	font-family: "微软雅黑";
+	display: block;
+}
+nav i {
+	background: #ddd;
+	color: #000;
+}
+/*nav a:hover {
+	margin-top: -40px;
+}*/
